@@ -1,0 +1,26 @@
+{
+  "name": "fcc-backend-project",
+  "version": "1.0.0",
+  "description": "contains all of the code solutions to the FCC backend Express project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamestq/fcc-backend-project.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "javascript",
+    "backend",
+    "free-code-camp"
+  ],
+  "author": "james utq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamestq/fcc-backend-project/issues"
+  },
+  "homepage": "https://github.com/jamestq/fcc-backend-project#readme"
+}
