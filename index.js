@@ -26,9 +26,11 @@ app.get("/api/:date?",
         req.date = date;
         next();
     }, 
-    (req, res, next) => {
-        console.log(req.date.toUTCString());
-        next();
+    (req, res) => {
+        res.json({
+            unix: convertToUnix(req.date),
+            utc:  req.date.toUTCString()
+        })
     })
 
 //listen for requests
