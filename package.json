@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jamestq/fcc-backend-project/issues"
   },
-  "homepage": "https://github.com/jamestq/fcc-backend-project#readme"
+  "homepage": "https://github.com/jamestq/fcc-backend-project#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
