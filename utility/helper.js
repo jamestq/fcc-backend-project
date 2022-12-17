@@ -1,5 +1,5 @@
 const convertToUnix = (date) => {
-    return Math.floor(date.getTime()/1000);
+    return date.getTime();
 }
 
 const formatDate = (dateString) => {
