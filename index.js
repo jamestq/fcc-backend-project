@@ -14,6 +14,14 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/api/whoami", (req, res) => {
+  res.json({
+    ipaddress: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+    language: req.headers["accept-language"],
+    software: req.headers["user-agent"]
+  })
+})
+
 //API endpoints
 app.get("/api/:date?",
   (req, res) => {
