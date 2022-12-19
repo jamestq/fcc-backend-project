@@ -13,6 +13,10 @@ app.use(cors({ optionsSuccessStatus: 200 })); //some legacy browsers choke on 20
 
 app.use(express.static("public"));
 
+//temporary storage option
+const urlMap = {};
+let urlCounter = 0;
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
@@ -76,4 +80,3 @@ app.get("/api/:date?",
 let listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 })
-
