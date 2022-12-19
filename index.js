@@ -2,6 +2,9 @@
 //set up required variables
 let express = require("express");
 let app = express();
+multer = require("multer");
+
+const upload = multer({dest: process.cwd() + "/public/data/uploads/"});
 const { convertToUnix, formatDate } = require("./utility/helper");
 
 //enable CORS so that the API can be tested by FCC
@@ -13,6 +16,14 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
+
+app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
+  res.json({
+    name: req.file.originalname,
+    type: req.file.mimetype,
+    size: req.file.size,
+  })
+})
 
 app.post("/api/shorturl", (req, res) => {
   let returnJSONObj = {}
