@@ -14,6 +14,25 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.post("/api/shorturl", (req, res) => {
+  let returnJSONObj = {}
+  try {
+    let url = req.body.url;
+    if(url.startsWith("http://") || url.startsWith("https://")){
+      let url = new URL(req.body.url);
+      returnJSONObj["original_url"] = url;
+      returnJSONObj["short_url"] = urlCounter;
+      urlMap[urlCounter] = url;
+      urlCounter++; 
+    }else{
+      throw TypeError;
+    }
+  } catch (error) {
+    returnJSONObj["error"] = "invalid url"
+  }
+  res.json(returnJSONObj);
+});
+
 app.get("/api/whoami", (req, res) => {
   res.json({
     ipaddress: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
@@ -21,6 +40,10 @@ app.get("/api/whoami", (req, res) => {
     software: req.headers["user-agent"]
   })
 })
+
+app.get("/api/shorturl/:url", (req, res, next) => {
+  res.redirect(urlMap[req.params.url]);
+});
 
 //API endpoints
 app.get("/api/:date?",
