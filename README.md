@@ -5,12 +5,12 @@ A request to <code>/api/:date?</code> with a valid date returns a JSON object wi
 Accepts any requests with dates that can be successfully arsed by new Date(date_string). If the input is invalid, returns a JSON object <code>{error: "Invalid Date"}</code>.
 
 If the input is empty, returns the JSON object with the unix and utc key of the current time.
-<hr>
+
 
 ## Request Header Parser Microservice
 
 A request to <code>/api/whoami</code> returns a JSON object with your IP address in the <code>ipaddress</ipaddress></code> key, your preferred language in the <code>language</code> key and your software in the <code>software</code> key.
-<hr>
+
 
 ## URL shortener Microservice
 
@@ -20,7 +20,7 @@ A POST to the <code>/api/shorturl</code> returns a JSON response with <code>orig
 Afterwards, when visiting <code>/api/shorturl/short_url</code>, the address is redirected to the original url.
 
 If the url doesn't follow the format of <code>http://www.example.com</code> (same with https protocol) format, the JSON response will contain <code>{error:'invalid url'}</code>
-<hr>
+
 
 ## Exercise Tracker
 
@@ -63,7 +63,7 @@ A GET request returns the user along with their exercises
     }
 
 optional parameters <code>from</code>, <code>to</code>, <code>limit</code> can be used to filter the logs to be included in the response.
-<hr>
+
 
 ## File Metadata Microservice
 
