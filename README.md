@@ -53,7 +53,7 @@ A POST request creates a new exercise, adds it to the user with <code>._id</code
 
 <code>/api/user/:_id/logs?[from][&amp;to][&amp;limit]</code>
 
-A GET request returns the user along with their exercises
+A GET request returns a JSON object of the user along with their exercises:
 
     {
         username: "username",
