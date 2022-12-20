@@ -1,13 +1,70 @@
-### Timestamp Microservice
+## Timestamp Microservice
+<hr>
+A request to <code>/api/:date?</code> with a valid date returns a JSON object with a unix key that is a Unix timestamp of the input date in milliseconds, and a utc key that is a string of the input date in the format: <code>Weekday DD MMM YYYY HH:MM:SS GMT.</code>
 
-### Request Header Parser Microservice
+Accepts any requests with dates that can be successfully arsed by new Date(date_string). If the input is invalid, returns a JSON object <code>{error: "Invalid Date"}</code>.
 
-### URL shortener Microservice
+If the input is empty, returns the JSON object with the unix and utc key of the current time.
 
-### Exercise Tracker
+## Request Header Parser Microservice
+<hr>
+A request to <code>/api/whoami</code> returns a JSON object with your IP address in the <code>ipaddress</ipaddress></code> key, your preferred language in the <code>language</code> key and your software in the <code>software</code> key.
 
-### File Metadata Microservice
+## URL shortener Microservice
+<hr>
 
+A POST to the <code>/api/shorturl</code> returns a JSON response with <code>original_url</code> and <code>short_url</code> properties.
+
+Afterwards, when visiting <code>/api/shorturl/short_url</code>, the address is redirected to the original url.
+
+If the url doesn't follow the format of <code>http://www.example.com</code> (same with https protocol) format, the JSON response will contain <code>{error:'invalid url'}</code>
+
+## Exercise Tracker
+<hr>
+<code>/api/users</code>
+
+A POST request creates a new user and returns a JSON object:
+
+    {
+        username: "username"
+        _id: idNumber
+    }
+
+A GET request returns an array of users.
+
+<code>/api/users/:_id/exercises</code>
+
+A POST request creates a new exercise, adds it to the user with <code>._id</code> and returns a JSON object: 
+
+    {
+        username: "username"
+        description: "exercise description"
+        duration: durationNumber,
+        date: "Day MMM DD YYYY",
+        _id: idNumber
+    }
+
+<code>/api/user/:_id/logs?[from][&amp;to][&amp;limit]</code>
+
+A GET request returns the user along with their exercises
+
+    {
+        username: "username",
+        count: numberOfExerciseLogs,
+        _id: idNumber,
+        log: [{
+            description: "description",
+            duration: durationNumber,
+            date: "Day MMM DD YYYY",
+        }...]
+    }
+
+optional parameters <code>from</code>, <code>to</code>, <code>limit</code> can be used to filter the logs to be included in the response.
+
+## File Metadata Microservice
+<hr>
+When submitting a file, a JSON object with the <code>name</code>, <code>type</code>, and <code>size</code> (in bytes) properties are returned.
+<br></br>
 This is the code for the Back End Development and APIs projects by FCC.
 
-Link to the projects page: https://www.freecodecamp.org/learn/back-end-development-and-apis#back-end-development-and-apis-projectsi
+Link to the projects' page: https://www.freecodecamp.org/learn/back-end-development-and-apis#back-end-development-and-apis-projectsi
