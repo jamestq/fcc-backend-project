@@ -6,10 +6,12 @@ Accepts any requests with dates that can be successfully arsed by new Date(date_
 
 If the input is empty, returns the JSON object with the unix and utc key of the current time.
 <hr>
+
 ## Request Header Parser Microservice
 
 A request to <code>/api/whoami</code> returns a JSON object with your IP address in the <code>ipaddress</ipaddress></code> key, your preferred language in the <code>language</code> key and your software in the <code>software</code> key.
 <hr>
+
 ## URL shortener Microservice
 
 
@@ -19,6 +21,7 @@ Afterwards, when visiting <code>/api/shorturl/short_url</code>, the address is r
 
 If the url doesn't follow the format of <code>http://www.example.com</code> (same with https protocol) format, the JSON response will contain <code>{error:'invalid url'}</code>
 <hr>
+
 ## Exercise Tracker
 
 <code>/api/users</code>
@@ -61,6 +64,7 @@ A GET request returns the user along with their exercises
 
 optional parameters <code>from</code>, <code>to</code>, <code>limit</code> can be used to filter the logs to be included in the response.
 <hr>
+
 ## File Metadata Microservice
 
 When submitting a file, a JSON object with the <code>name</code>, <code>type</code>, and <code>size</code> (in bytes) properties are returned.
