@@ -1,3 +1,7 @@
+This is the code for the Back End Development and APIs projects by FCC.
+
+Link to the projects' page: https://www.freecodecamp.org/learn/back-end-development-and-apis#back-end-development-and-apis-projectsi
+
 ## Timestamp Microservice
 
 A request to <code>/api/:date?</code> with a valid date returns a JSON object with a unix key that is a Unix timestamp of the input date in milliseconds, and a utc key that is a string of the input date in the format: <code>Weekday DD MMM YYYY HH:MM:SS GMT.</code>
@@ -68,7 +72,3 @@ optional parameters <code>from</code>, <code>to</code>, <code>limit</code> can b
 ## File Metadata Microservice
 
 When submitting a file, a JSON object with the <code>name</code>, <code>type</code>, and <code>size</code> (in bytes) properties are returned.
-<br></br>
-This is the code for the Back End Development and APIs projects by FCC.
-
-Link to the projects' page: https://www.freecodecamp.org/learn/back-end-development-and-apis#back-end-development-and-apis-projectsi
