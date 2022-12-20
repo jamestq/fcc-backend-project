@@ -1,26 +1,26 @@
 ## Timestamp Microservice
-<hr>
+
 A request to <code>/api/:date?</code> with a valid date returns a JSON object with a unix key that is a Unix timestamp of the input date in milliseconds, and a utc key that is a string of the input date in the format: <code>Weekday DD MMM YYYY HH:MM:SS GMT.</code>
 
 Accepts any requests with dates that can be successfully arsed by new Date(date_string). If the input is invalid, returns a JSON object <code>{error: "Invalid Date"}</code>.
 
 If the input is empty, returns the JSON object with the unix and utc key of the current time.
-
+<hr>
 ## Request Header Parser Microservice
-<hr>
-A request to <code>/api/whoami</code> returns a JSON object with your IP address in the <code>ipaddress</ipaddress></code> key, your preferred language in the <code>language</code> key and your software in the <code>software</code> key.
 
-## URL shortener Microservice
+A request to <code>/api/whoami</code> returns a JSON object with your IP address in the <code>ipaddress</ipaddress></code> key, your preferred language in the <code>language</code> key and your software in the <code>software</code> key.
 <hr>
+## URL shortener Microservice
+
 
 A POST to the <code>/api/shorturl</code> returns a JSON response with <code>original_url</code> and <code>short_url</code> properties.
 
 Afterwards, when visiting <code>/api/shorturl/short_url</code>, the address is redirected to the original url.
 
 If the url doesn't follow the format of <code>http://www.example.com</code> (same with https protocol) format, the JSON response will contain <code>{error:'invalid url'}</code>
-
-## Exercise Tracker
 <hr>
+## Exercise Tracker
+
 <code>/api/users</code>
 
 A POST request creates a new user and returns a JSON object:
@@ -60,9 +60,9 @@ A GET request returns the user along with their exercises
     }
 
 optional parameters <code>from</code>, <code>to</code>, <code>limit</code> can be used to filter the logs to be included in the response.
-
-## File Metadata Microservice
 <hr>
+## File Metadata Microservice
+
 When submitting a file, a JSON object with the <code>name</code>, <code>type</code>, and <code>size</code> (in bytes) properties are returned.
 <br></br>
 This is the code for the Back End Development and APIs projects by FCC.
