@@ -2,16 +2,17 @@
 
 <html>
    <head>
-      <title>Timestamp Microservice | freeCodeCamp.org</title>
+      <title>Back End Microservice | freeCodeCamp.org</title>
       <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
       <link href="style.css" rel="stylesheet" type="text/css">
    </head>
 
    <body>
-    <h1>Timestamp Microservice</h1>
-    <hr />
+    <!-- UI for the timestamp microservice -->
     <div class="container">
+      <h1>Timestamp Microservice</h1>
+      <hr />
       <h3>Example Usage:</h3>
       <ul>
         <li><a href="api/2015-12-25">[project url]/api/2015-12-25</a></li>
@@ -23,7 +24,10 @@
         <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
       </p>
     </div>
+
+    <!-- UI for the URL shortener -->
     <div class="container">
+      <h1>URL Shortener Microservice</h1>
       <section>
         <form action="api/shorturl" method="POST">
           <fieldset>
@@ -35,13 +39,30 @@
         </form>
     </div>
 
-    <div class="view">
-      <h4 id="output"></h4>
-      <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
-        <input id="inputfield" type="file" name="upfile">
-        <input id="button" type="submit" value="Upload">
-      </form>
+    <!-- UI for the File Metadata Microservice -->
+    <div class="container">
+      <h1>API Project: File Metadata Microservice</h1>
+
+      <h3>Usage:</h3>
+      <p>
+        Please Upload a File ...
+      </p>
+      <div class="view">
+        <h4 id="output"></h4>
+        <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
+          <input id="inputfield" type="file" name="upfile">
+          <input id="button" type="submit" value="Upload">
+        </form>
+      </div>
     </div>
+    <div class="footer">
+      <p>
+        by 
+        <a href="http://www.freecodecamp.com">freeCodeCamp</a>
+      </p>
+    </div>
+
+    <!-- UI for the exercise tracker -->
     <div class="container">
       <h1>Exercise tracker</h1>
       <form action="/api/users" method="post">
