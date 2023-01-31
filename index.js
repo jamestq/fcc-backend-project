@@ -11,27 +11,22 @@ const pages = [
   {
     title: "Timestamp Microservice",
     link: "/timestamp",
-    dir: currentDirectory + "/views/partials/timestamp",
   },
   {
     title: "Request Header Parser",
     link: "/headerparser",
-    dir: currentDirectory + "/views/partials/headerparser",
   },
   {
     title: "URL Shortener",
     link: "/urlshort",
-    dir: currentDirectory + "/views/partials/urlshort",
   },
   {
     title: "File Metadata Microservice",
     link: "/filemeta",
-    dir: currentDirectory + "/views/partials/filemeta",
   },
   {
     title: "Exercise Tracker",
     link: "/exercise",
-    dir: currentDirectory + "/views/partials/exercise",
   }
 ]
 
@@ -63,12 +58,36 @@ app.get("/", (req, res) => {
   });
 });
 
-//Timestamp
+//GET REQUESTS
 app.get("/timestamp", (req, res) => {
   res.render(indexPage, {
     elementPath: "../partials/timestamp"
   })
 });
+
+app.get("/headerparser", (req, res) => {
+  res.render(indexPage, {
+    elementPath: "../partials/headerparser"
+  })
+})
+
+app.get("/urlshort", (req, res) => {
+  res.render(indexPage, {
+    elementPath: "../partials/urlshort"
+  })
+})
+
+app.get("/filemeta", (req, res) => {
+  res.render(indexPage, {
+    elementPath: "../partials/filemeta"
+  })
+})
+
+app.get("/exercise", (req, res) => {
+  res.render(indexPage, {
+    elementPath: "../partials/exercise"
+  })
+})
 
 app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
   res.json({
