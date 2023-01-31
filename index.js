@@ -4,16 +4,48 @@ let express = require("express");
 let multer = require("multer");
 let bodyParser = require("body-parser");
 
+//constants
+const currentDirectory = process.cwd();
+const indexPage = "pages/index";
+const pages = [
+  {
+    title: "Timestamp Microservice",
+    link: "/timestamp",
+    dir: currentDirectory + "/views/partials/timestamp",
+  },
+  {
+    title: "Request Header Parser",
+    link: "/headerparser",
+    dir: currentDirectory + "/views/partials/headerparser",
+  },
+  {
+    title: "URL Shortener",
+    link: "/urlshort",
+    dir: currentDirectory + "/views/partials/urlshort",
+  },
+  {
+    title: "File Metadata Microservice",
+    link: "/filemeta",
+    dir: currentDirectory + "/views/partials/filemeta",
+  },
+  {
+    title: "Exercise Tracker",
+    link: "/exercise",
+    dir: currentDirectory + "/views/partials/exercise",
+  }
+]
+
 let app = express();
 
-const upload = multer({dest: process.cwd() + "/public/data/uploads/"});
+const upload = multer({dest: currentDirectory + "/public/data/uploads/"});
 const { convertToUnix, formatDate } = require("./utility/helper");
 
 //enable CORS so that the API can be tested by FCC
 let cors = require("cors");
 app.use(cors({ optionsSuccessStatus: 200 })); //some legacy browsers choke on 204
-app.use(bodyParser.urlencoded({ extended: false }));
 
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 //temporary storage option
@@ -22,8 +54,20 @@ const userDatabase = [];
 const exerciseDatabase = [];
 let urlCounter = 0;
 
+//Landing Page
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/views/index.html");
+  let defaultPath = "../partials/links";
+  res.render(indexPage, {
+    elementPath: defaultPath,
+    pages: pages
+  });
+});
+
+//Timestamp
+app.get("/timestamp", (req, res) => {
+  res.render(indexPage, {
+    elementPath: "../partials/timestamp"
+  })
 });
 
 app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
@@ -129,7 +173,9 @@ app.get("/api/users/:_id/logs", (req, res) => {
   res.json(userLog);
 })
 
+const PORT = process.env.PORT || 3000;
+
 //listen for requests
-let listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
+let listener = app.listen(PORT, () => {
+  console.log("Your app is listening on port", PORT);
 })
