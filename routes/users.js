@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const bodyParser = require("body-parser");
 const crypto = require("node:crypto");
 const {filterEx} = require("../utility/helper");
 

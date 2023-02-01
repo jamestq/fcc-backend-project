@@ -1,7 +1,6 @@
 //index.js - entry point for the app
 //set up required variables
 let express = require("express");
-let multer = require("multer");
 let bodyParser = require("body-parser");
 let app = express();
 //enable CORS so that the API can be tested by FCC
