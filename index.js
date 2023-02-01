@@ -3,17 +3,19 @@
 let express = require("express");
 let bodyParser = require("body-parser");
 let app = express();
+let path = require("path");
 //enable CORS so that the API can be tested by FCC
 let cors = require("cors");
 app.use(cors({ optionsSuccessStatus: 200 })); //some legacy browsers choke on 204
 
-//import routers
-const apiRoute = require("./routes/api");
-const defaultRoute = require("./routes/default");
-
+app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
+
+//import routers
+const apiRoute = require("./routes/api");
+const defaultRoute = require("./routes/default");
 
 //Landing Page
 app.use("/api", apiRoute);
