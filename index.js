@@ -11,7 +11,7 @@ app.use(cors({ optionsSuccessStatus: 200 })); //some legacy browsers choke on 20
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 //import routers
 const apiRoute = require("./routes/api");
