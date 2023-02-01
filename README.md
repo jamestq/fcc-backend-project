@@ -1,6 +1,21 @@
-This is the code for the Back End Development and APIs projects by FCC.
+# Microservices with Express Application
+Link to the description page of the projects: https://www.freecodecamp.org/learn/back-end-development-and-apis#back-end-development-and-apis-projects
 
-Link to the projects' page: https://www.freecodecamp.org/learn/back-end-development-and-apis#back-end-development-and-apis-projectsi
+## Demo or Installation 
+
+Refer to the link http://3.27.45.147/ for the demo 
+
+(NOTE: the webpage can only be accessed with an insecured http connection - use an Incognito/Private window of your browser and DO NOT enter any private information)
+
+Alternatively to install, ensure that Node >15.8.0 is installed, and type the following codes to your terminal
+```
+git clone https://github.com/jamestq/fcc-backend-project.git
+cd fcc-backend-project
+npm install
+npm run start
+```
+
+# Micorservices available
 
 ## Timestamp Microservice
 
