@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const indexPage = process.cwd() + "/views/pages/index";
+const indexPage = "pages/index";
 
 const pages = [
     {
