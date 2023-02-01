@@ -7,7 +7,7 @@ Refer to the link http://3.27.45.147/ for the demo
 
 (NOTE: the webpage can only be accessed with an insecured http connection - use an Incognito/Private window of your browser and DO NOT enter any private information)
 
-Alternatively to install, ensure that Node >15.8.0 is installed, and type the following codes to your terminal
+Alternatively, to run locally on your machine, ensure that Node >15.8.0 is installed, and type the following codes to your terminal
 ```
 git clone https://github.com/jamestq/fcc-backend-project.git
 cd fcc-backend-project
@@ -15,7 +15,7 @@ npm install
 npm run start
 ```
 
-# Micorservices available
+# Microservices available
 
 ## Timestamp Microservice
 
