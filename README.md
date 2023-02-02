@@ -5,7 +5,9 @@ Link to the description page of the projects: https://www.freecodecamp.org/learn
 
 Refer to the link http://3.27.45.147/ for the demo 
 
-(NOTE: the webpage can only be accessed with an insecured http connection - use an Incognito/Private window of your browser and DO NOT enter any private information)
+**NOTE**: 
+- The webpage can only be accessed with an insecured http connection as Let's Encrypt does not certify AWS domains. 
+- Use an Incognito/Private window of your browser and DO NOT enter any private information
 
 Alternatively, to run locally on your machine, ensure that Node >15.8.0 is installed, and type the following codes to your terminal
 ```
