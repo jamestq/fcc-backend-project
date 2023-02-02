@@ -16,6 +16,17 @@ cd fcc-backend-project
 npm install
 npm run start
 ```
+## Live Demo used for Free Code Camp certification
+**Timestamp** - https://boilerplate-project-timestamp.jamestq.repl.co/
+
+**Request Header Parser** - https://boilerplate-project-headerparser.jamestq.repl.co/
+
+**URL Shortener** - https://boilerplate-project-urlshortener.jamestq.repl.co/
+
+**Exercise Tracker** - https://boilerplate-project-exercisetracker.jamestq.repl.co/
+
+**File Metadata** - https://boilerplate-project-filemetadata.jamestq.repl.co/
+
 
 # Microservices available
 
