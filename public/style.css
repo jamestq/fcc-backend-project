@@ -25,6 +25,12 @@ body {
 	height: 100vh;
 }
 
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 .nav{
 	color: white;
 	background-color: blue;
@@ -74,6 +80,16 @@ body {
 .app-links li a:hover{
 	text-decoration: none;
 	background-color: white;
+}
+
+.element-container{
+	border: 1px red solid;
+	padding: 2em;
+	text-align: center;
+}
+
+.element-container li{
+	list-style: none;
 }
 
 .footer {
