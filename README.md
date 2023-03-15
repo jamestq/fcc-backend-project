@@ -3,7 +3,7 @@ Link to the description page of the projects: https://www.freecodecamp.org/learn
 
 ## Demo or Installation 
 
-Refer to the link http://3.27.45.147/ for the demo 
+Refer to the link http://3.25.220.228/ for the demo 
 
 **NOTE**: 
 - The webpage can only be accessed with an insecured http connection as Let's Encrypt does not certify AWS domains, and a custom domain is required. 
